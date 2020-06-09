@@ -2,6 +2,7 @@ package api
 
 import (
 	"github.com/PuerkitoBio/goquery"
+	"github.com/pkg/errors"
 	"strings"
 )
 
@@ -68,13 +69,29 @@ func parseBody(body string) ([]*Result,error) {
 
 	// all other kv
 	all := doc.Find(".a-list.a-search-list.a-list-with-favs")
-	res = append(res,parseOther(all)...)
+	allRes,err := parseOther(all)
+	if err!=nil {
+		return res,err
+	}
+	res= append(res,allRes...)
 	return res,nil
 }
 
 
+func parseByParams(body string) ([]*Result,error){
+
+	not_found := strings.Index(body,"Увы, таких объявлений нет") >= 0
+	if not_found {
+		return nil,errors.New("Not Found")
+	}
+	return parseBody(body)
+
+}
+
+
+
 // parse all other
-func parseOther(doc *goquery.Selection) []*Result {
+func parseOther(doc *goquery.Selection) ([]*Result,error) {
 	res := make([]*Result,0)
 	doc.Find("div").Each(func(i int, selection *goquery.Selection) {
 		title,_ := selection.Find(".a-card__inc a picture img").Attr("title")
@@ -94,8 +111,13 @@ func parseOther(doc *goquery.Selection) []*Result {
 			Preview: preview,
 			Link: BASE_URL+link,
 		}
-		res = append(res,item)
+		if len(res)==0 {
+			res = append(res,item)
+		}
+		if res[len(res)-1].Title != title{
+			res = append(res,item)
+		}
 		return
 	})
-	return res
+	return res,nil
 }
