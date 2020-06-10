@@ -5,6 +5,7 @@
 <p><b style="color: #08ff20">[GET]</b>  /allRent - get all apartments for rent</p><hr>
 <p><b style="color: #08ff20">[GET]</b>  /allSell - get all apartments for sale</p><hr>
 <p><b style="color: #08ff20">[GET]</b>  /sell/{params} - get apartments by parameters</p>
+<p><b style="color: #08ff20">[GET]</b>  /rent/{params} - get apartments by parameters</p>
 <h5>Parameters:</h5>
 <p> <b>room</b> - number of rooms. Values = [1,2,3,4,5.100]. Ex: /sell/room=2</p>
 <p> <b>price_from</b> - starting price. Values: min=1; max=15000000000000. Ex: /sell/price_from=100000000</p>
@@ -19,6 +20,7 @@
 <p> <b>year_to</b> - the end year of construction. Values: min=1850; max=2030. Ex: /sell/year_from=2015</p>
 <p> <b>toilet</b> - type of bathroom. Values: 1 - separated; 2 - combined; 3 - more than 2; 4 - not. Ex: /sell/toilet=1</p>
 <p> <b>priv_dorm</b> - former dormitory. Values: 1 - yes; 2 - no. Ex: /sell/priv_dorm=2</p>
+<p> <b>page</b> - number of page. Values: int. Ex: /sell/page=2</p>
 <h6>Note</h6>
 <p>You can use all the parameters you want via &. Example: /sell/room=2&checked=1&price_from=8000000&price_to=15000000</p>
 
@@ -30,7 +32,7 @@
 <p><a href="github.com/urfave/cli">cli</a></p> <hr>
 
 <h2>Clone the project</h2>
-<code>git clone https://github.com/gospodinzerkalo/krishakz_scraping</code> <hr>
+<code> git clone https://github.com/gospodinzerkalo/krishakz_scraping </code> <hr>
 <h2>Install dependencies</h2>
 <code>make depends</code>
 

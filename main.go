@@ -32,6 +32,7 @@ func StartServer(d *cli.Context) error {
 	router.GET("/allRent",api.GetRent())
 	router.GET("/allSell",api.GetSell())
 	router.GET("/sell/:params",api.GetSellByParams())
+	router.GET("/rent/:params",api.GetRentByParams())
 	log.Fatal(fasthttp.ListenAndServe(GetPort(), router.Handler))
 	return nil
 }

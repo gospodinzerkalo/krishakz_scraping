@@ -2,8 +2,8 @@ package api
 
 import (
 	"github.com/PuerkitoBio/goquery"
-	"github.com/pkg/errors"
 	"strings"
+	"errors"
 )
 
 func parseBody(body string) ([]*Result,error) {
