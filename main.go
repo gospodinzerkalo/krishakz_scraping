@@ -1,15 +1,15 @@
 package main
 
 import (
-	"./api"
-	"github.com/valyala/fasthttp"
-	"github.com/buaazp/fasthttprouter"
-	"github.com/urfave/cli"
+	"fmt"
 	"log"
 	"os"
-	"fmt"
-)
 
+	"./api"
+	"github.com/buaazp/fasthttprouter"
+	"github.com/urfave/cli"
+	"github.com/valyala/fasthttp"
+)
 
 func main() {
 
@@ -29,10 +29,11 @@ func StartServer(d *cli.Context) error {
 	router := fasthttprouter.New()
 
 	//endpoints...
-	router.GET("/allRent",api.GetRent())
-	router.GET("/allSell",api.GetSell())
-	router.GET("/sell/:params",api.GetSellByParams())
-	router.GET("/rent/:params",api.GetRentByParams())
+
+	router.GET("/sell", api.GetSell())
+	router.GET("/rent", api.GetRent())
+	router.GET("/sell/:params", api.GetSellByParams())
+	router.GET("/rent/:params", api.GetRentByParams())
 	log.Fatal(fasthttp.ListenAndServe(GetPort(), router.Handler))
 	return nil
 }

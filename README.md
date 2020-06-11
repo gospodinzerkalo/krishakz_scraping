@@ -7,6 +7,7 @@
 <p><b style="color: #08ff20">[GET]</b>  /sell/{params} - get apartments by parameters</p>
 <p><b style="color: #08ff20">[GET]</b>  /rent/{params} - get apartments by parameters</p>
 <h5>Parameters:</h5>
+<p><b>city</b> -  select a city. Values = almaty, nur-sultan, shymkent, akmolinskaja-oblast, aktjubinskaja-oblast, almatinskaja-oblast, atyrauskaja-oblast, vostochno-kazahstanskaja-oblast, zhambylskaja-oblast, zapadno-kazahstanskaja-oblast, kostanajskaja-oblast, kyzylordinskaja-oblast, mangistauskaja-oblast, pavlodarskaja-oblast, severo-kazahstanskaja-oblast, juzhno-kazahstanskaja-oblast, zn - this means another city/region</p>
 <p> <b>room</b> - number of rooms. Values = [1,2,3,4,5.100]. Ex: /sell/room=2</p>
 <p> <b>price_from</b> - starting price. Values: min=1; max=15000000000000. Ex: /sell/price_from=100000000</p>
 <p> <b>price_to</b> - the final price. Values: min=1; max=15000000000000. Ex: /sell/price_to=100000000</p>
