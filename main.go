@@ -4,10 +4,9 @@ import (
 	"fmt"
 	"log"
 	"os"
-
-	"./api"
 	"github.com/buaazp/fasthttprouter"
-	"github.com/urfave/cli"
+	"github.com/gospodinzerkalo/krishakz_scraping/api"
+	"github.com/urfave/cli/v2"
 	"github.com/valyala/fasthttp"
 )
 
