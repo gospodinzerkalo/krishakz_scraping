@@ -2,10 +2,10 @@
 <h2>Review</h2>
 <p>Web scraping website krisha.kz. In Progress....</p><hr>
 <h2>Using</h2>
-<p><b style="color: #08ff20">[GET]</b>  /allRent - get all apartments for rent</p><hr>
-<p><b style="color: #08ff20">[GET]</b>  /allSell - get all apartments for sale</p><hr>
-<p><b style="color: #08ff20">[GET]</b>  /sell/{params} - get apartments by parameters</p>
-<p><b style="color: #08ff20">[GET]</b>  /rent/{params} - get apartments by parameters</p>
+<p><b style="color: #08ff20">[GET]</b>  /rent/all - get all apartments for rent</p><hr>
+<p><b style="color: #08ff20">[GET]</b>  /sell/all - get all apartments for sale</p><hr>
+<p><b style="color: #08ff20">[GET]</b>  /sell - get apartments by parameters</p>
+<p><b style="color: #08ff20">[GET]</b>  /rent - get apartments by parameters</p>
 <h5>Parameters:</h5>
 <p><b>city</b> -  select a city. Values = almaty, nur-sultan, shymkent, akmolinskaja-oblast, aktjubinskaja-oblast, almatinskaja-oblast, atyrauskaja-oblast, vostochno-kazahstanskaja-oblast, zhambylskaja-oblast, zapadno-kazahstanskaja-oblast, kostanajskaja-oblast, kyzylordinskaja-oblast, mangistauskaja-oblast, pavlodarskaja-oblast, severo-kazahstanskaja-oblast, juzhno-kazahstanskaja-oblast, zn - this means another city/region</p>
 <p> <b>room</b> - number of rooms. Values = [1,2,3,4,5.100]. Ex: /sell/room=2</p>
@@ -23,7 +23,7 @@
 <p> <b>priv_dorm</b> - former dormitory. Values: 1 - yes; 2 - no. Ex: /sell/priv_dorm=2</p>
 <p> <b>page</b> - number of page. Values: int. Ex: /sell/page=2</p>
 <h6>Note</h6>
-<p>You can use all the parameters you want via &. Example: /sell/room=2&checked=1&price_from=8000000&price_to=15000000</p>
+<p>You can use all the parameters you want via &. Example: /sell?room=2&checked=1&price_from=8000000&price_to=15000000</p>
 
 <hr>
 <h2>Dependencies</h2>

@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"os"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/gospodinzerkalo/krishakz_scraping/api"
 	"github.com/urfave/cli/v2"
 	"github.com/valyala/fasthttp"
+	"log"
+	"os"
 )
 
 func main() {
@@ -29,10 +29,10 @@ func StartServer(d *cli.Context) error {
 
 	//endpoints...
 
-	router.GET("/sell", api.GetSell())
-	router.GET("/rent", api.GetRent())
-	router.GET("/sell/:params", api.GetSellByParams())
-	router.GET("/rent/:params", api.GetRentByParams())
+	router.GET("/sell/all", api.GetSell())
+	router.GET("/rent/all", api.GetRent())
+	router.GET("/sell", api.GetSellByParams())
+	router.GET("/rent", api.GetRentByParams())
 	log.Fatal(fasthttp.ListenAndServe(GetPort(), router.Handler))
 	return nil
 }
